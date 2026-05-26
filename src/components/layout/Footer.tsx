@@ -11,14 +11,22 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center mb-6">
+            <Link href="/" className="flex items-center mb-6 group gap-3.5">
               <Image 
-                src="/logo-dark.svg" 
+                src="/logo.png" 
                 alt="DreamMed Abroad Logo" 
-                width={180} 
-                height={60} 
-                className="object-contain h-14 w-auto"
+                width={48} 
+                height={48} 
+                className="h-12 w-12 object-contain rounded-full shadow-lg border border-white/10 group-hover:scale-105 transition-transform duration-300"
               />
+              <div className="flex flex-col">
+                <span className="font-bold text-2xl leading-none tracking-tight text-white">
+                  DreamMed
+                </span>
+                <span className="text-[11px] uppercase font-bold tracking-[0.25em] mt-0.5 text-sky-light">
+                  Abroad
+                </span>
+              </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
               Premium MBBS abroad consultancy helping Indian students achieve their

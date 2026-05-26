@@ -34,15 +34,27 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group">
+          <Link href="/" className="flex items-center group gap-3">
             <Image 
-              src="/logo-light.svg" 
+              src="/logo.png" 
               alt="DreamMed Abroad Logo" 
-              width={180} 
-              height={60} 
-              className="object-contain h-12 w-auto group-hover:scale-105 transition-transform"
+              width={44} 
+              height={44} 
+              className="h-11 w-11 object-contain rounded-full shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/10"
               priority
             />
+            <div className="flex flex-col">
+              <span className={`font-bold text-xl leading-none tracking-tight transition-colors duration-300 ${
+                isScrolled ? "text-navy" : "text-white"
+              }`}>
+                DreamMed
+              </span>
+              <span className={`text-[10px] uppercase font-bold tracking-[0.2em] mt-0.5 transition-colors duration-300 ${
+                isScrolled ? "text-sky" : "text-sky-light"
+              }`}>
+                Abroad
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
@@ -58,7 +70,11 @@ export function Navbar() {
               >
                 {link.children ? (
                   <button
-                    className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-text-secondary hover:text-navy transition-colors rounded-lg hover:bg-sky-50"
+                    className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-colors rounded-lg cursor-pointer ${
+                      isScrolled
+                        ? "text-text-secondary hover:text-navy hover:bg-sky-50"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
                     onClick={() =>
                       setOpenDropdown(
                         openDropdown === link.label ? null : link.label
@@ -75,7 +91,11 @@ export function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
-                    className="px-3 py-2 text-sm font-medium text-text-secondary hover:text-navy transition-colors rounded-lg hover:bg-sky-50"
+                    className={`px-3 py-2 text-sm font-medium transition-colors rounded-lg ${
+                      isScrolled
+                        ? "text-text-secondary hover:text-navy hover:bg-sky-50"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -118,22 +138,34 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-              <SheetTrigger className="lg:hidden p-2 rounded-lg hover:bg-sky-50 transition-colors">
-                <Menu className="w-5 h-5 text-navy" />
+              <SheetTrigger className={`lg:hidden p-2 rounded-lg transition-colors cursor-pointer ${
+                isScrolled ? "hover:bg-sky-50" : "hover:bg-white/10"
+              }`}>
+                <Menu className={`w-5 h-5 transition-colors ${
+                  isScrolled ? "text-navy" : "text-white"
+                }`} />
               </SheetTrigger>
               <SheetContent side="right" className="w-80 p-0">
                 <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between p-4 border-b border-border-light">
-                    <Link href="/" className="flex items-center" onClick={() => setMobileOpen(false)}>
+                    <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
                       <Image 
-                        src="/logo-light.svg" 
+                        src="/logo.png" 
                         alt="DreamMed Abroad Logo" 
-                        width={140} 
-                        height={40} 
-                        className="object-contain h-10 w-auto"
+                        width={36} 
+                        height={36} 
+                        className="h-9 w-9 object-contain rounded-full shadow-sm border border-border-light"
                       />
+                      <div className="flex flex-col">
+                        <span className="font-bold text-lg leading-none tracking-tight text-navy">
+                          DreamMed
+                        </span>
+                        <span className="text-[9px] uppercase font-bold tracking-[0.2em] mt-0.5 text-sky">
+                          Abroad
+                        </span>
+                      </div>
                     </Link>
                     <button
                       onClick={() => setMobileOpen(false)}

@@ -34,22 +34,26 @@ export function Navbar() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center group gap-3">
+          <Link href="/" className="flex items-center group gap-4">
             <Image 
               src="/logo.png" 
               alt="DreamMed Abroad Logo" 
-              width={44} 
-              height={44} 
-              className="h-11 w-11 object-contain rounded-full shadow-md group-hover:scale-105 transition-transform duration-300 border border-white/10"
+              width={120} 
+              height={120} 
+              className="h-[80px] w-[80px] lg:h-[120px] lg:w-[120px] object-contain transition-transform duration-300 group-hover:scale-105"
+              style={{
+                background: "transparent",
+                filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.35))",
+              }}
               priority
             />
-            <div className="flex flex-col">
-              <span className={`font-bold text-xl leading-none tracking-tight transition-colors duration-300 ${
+            <div className="flex flex-col justify-center">
+              <span className={`font-bold text-2xl leading-none tracking-tight transition-colors duration-300 ${
                 isScrolled ? "text-navy" : "text-white"
               }`}>
                 DreamMed
               </span>
-              <span className={`text-[10px] uppercase font-bold tracking-[0.2em] mt-0.5 transition-colors duration-300 ${
+              <span className={`text-xs uppercase font-bold tracking-[0.25em] mt-1 transition-colors duration-300 ${
                 isScrolled ? "text-sky" : "text-sky-light"
               }`}>
                 Abroad
@@ -150,19 +154,23 @@ export function Navbar() {
                 <div className="flex flex-col h-full">
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between p-4 border-b border-border-light">
-                    <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
+                    <Link href="/" className="flex items-center gap-3" onClick={() => setMobileOpen(false)}>
                       <Image 
                         src="/logo.png" 
                         alt="DreamMed Abroad Logo" 
-                        width={36} 
-                        height={36} 
-                        className="h-9 w-9 object-contain rounded-full shadow-sm border border-border-light"
+                        width={75} 
+                        height={75} 
+                        className="h-[75px] w-[75px] object-contain"
+                        style={{
+                          background: "transparent",
+                          filter: "drop-shadow(0 0 12px rgba(56, 189, 248, 0.35))",
+                        }}
                       />
-                      <div className="flex flex-col">
-                        <span className="font-bold text-lg leading-none tracking-tight text-navy">
+                      <div className="flex flex-col justify-center">
+                        <span className="font-bold text-xl leading-none tracking-tight text-navy">
                           DreamMed
                         </span>
-                        <span className="text-[9px] uppercase font-bold tracking-[0.2em] mt-0.5 text-sky">
+                        <span className="text-[10px] uppercase font-bold tracking-[0.2em] mt-0.5 text-sky">
                           Abroad
                         </span>
                       </div>

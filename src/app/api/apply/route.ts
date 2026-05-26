@@ -1,18 +1,23 @@
 import { NextResponse } from "next/server";
 
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbyATH1zRSwU8O0Bwkno0J7RqP_3vqo9XMjiWzjTbGHRshE1wuzOO1v8G2V9zBYBFhYI/exec";
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    console.log("Lead Received:", body);
-
-    return NextResponse.json(
-      {
-        success: true,
-        message: "Application submitted successfully",
+    const response = await fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
       },
-      { status: 201 }
-    );
+      body: JSON.stringify(body),
+    });
+
+    const data = await response.json();
+
+    return NextResponse.json(data);
   } catch (error) {
     console.error("API ERROR:", error);
 
@@ -22,3 +27,4 @@ export async function POST(request: Request) {
     );
   }
 }
+   

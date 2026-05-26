@@ -15,7 +15,12 @@ export async function POST(request: Request) {
       }
     );
 
-    return NextResponse.json({ success: true });
+    const result = await response.text();
+
+return NextResponse.json({
+  success: true,
+  result,
+});
   } catch (error) {
     return NextResponse.json(
       { error: "Internal server error" },

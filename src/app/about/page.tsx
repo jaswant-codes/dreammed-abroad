@@ -1,23 +1,74 @@
-import type { Metadata } from "next";
+"use client";
+
 import { SITE_CONFIG } from "@/lib/constants";
 import { CTABanner } from "@/components/home/CTABanner";
 import { Target, Heart, Users, Headphones, ShieldCheck, GraduationCap, Globe, Award } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "About Us — Who We Are",
-  description:
-    "Learn about DreamMed Abroad — a premium MBBS abroad consultancy with 10+ years of experience helping Indian students achieve their medical career dreams.",
-  alternates: { canonical: `${SITE_CONFIG.url}/about` },
-};
+import { motion } from "framer-motion";
 
 const team = [
-  { name: "Dr. Vishal", role: "Founder & CEO", initials: "DV", bio: "10+ years of experience in international medical education consulting." },
-  { name: "Dr. Sukhdev", role: "Head of Admissions", initials: "DS", bio: "Expert in university selection and MBBS admission guidance." },
-  { name: "Dr. Avani", role: "Student Success Advisor", initials: "DA", bio: "Helping students throughout their MBBS abroad journey." },
-  { name: "Dr. Ajay Singh", role: "Senior Student Counsellor", initials: "AS", bio: "Providing personalized counselling and career guidance to students." },
-  { name: "Dr. Prince", role: "Documentation & Visa Specialist", initials: "DP", bio: "Specialized in international student documentation and visa support." },
-  { name: "Dr. Mohammad Sakil", role: "Student Representative", initials: "MS", bio: "10+ years of experience supporting students in overseas education consulting." },
+  {
+    name: "Dr. Vishal",
+    role: "Founder & CEO",
+    line2: "Executive Head – Delhi",
+  },
+  {
+    name: "Dr. Dinesh",
+    role: "RML Hospital, Delhi",
+    line2: "Executive Head – Ganaur, Sonipat, Haryana",
+  },
+  {
+    name: "Dr. Sukhdev Pooniya",
+    role: "RBTB Hospital, New Delhi",
+    line2: "Executive Head – Balotra, Jodhpur & Barmer, Rajasthan",
+  },
+  {
+    name: "Dr. Avni",
+    role: "Sanjay Gandhi Hospital, Delhi",
+    line2: "Executive Head – Ahmedabad, Gujarat",
+  },
+  {
+    name: "Dr. Ajay Singh",
+    role: "Senior Student Counsellor",
+    line2: "Providing personalised counselling and career guidance to students.",
+  },
+  {
+    name: "Dr. Prince",
+    role: "Documentation & Visa Specialist",
+    line2: "Specialised in international student documentation and visa support.",
+  },
+  {
+    name: "Dr. Sakeel Mohammad",
+    role: "Safdarjung Hospital, New Delhi",
+    line2: "Executive Head – Bharatpur & Alwar, Rajasthan",
+  },
+  {
+    name: "Dr. Ravi Pooniya",
+    role: "Executive Head",
+    line2: "Churu & Jhunjhunu, Rajasthan",
+  },
 ];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.12,
+      duration: 0.5,
+      ease: [0.25, 0.46, 0.45, 0.94],
+    },
+  }),
+};
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function AboutPage() {
   return (
@@ -153,29 +204,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20 bg-surface">
+      {/* Team — Meet the Experts */}
+      <section className="py-24 bg-surface overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <motion.div
+            className="text-center mb-16"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={sectionVariants}
+          >
             <span className="inline-block px-4 py-1.5 rounded-full bg-sky-50 text-sky text-xs font-semibold uppercase tracking-wider mb-4">
               Our Team
             </span>
             <h2 className="text-3xl sm:text-4xl font-bold text-navy">Meet the Experts</h2>
-            <p className="mt-4 text-text-secondary max-w-xl mx-auto">
-              Our experienced team of counsellors and education experts is committed to guiding students toward successful medical careers abroad.
+            <p className="mt-4 text-text-secondary max-w-2xl mx-auto text-lg">
+              Our experienced team of medical professionals and education experts is committed to
+              guiding students toward successful medical careers abroad.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 card-shadow text-center hover:-translate-y-1 transition-all h-full flex flex-col">
-                <div className="w-16 h-16 rounded-full bg-navy flex items-center justify-center text-white text-lg font-bold mx-auto mb-4 shrink-0">
-                  {member.initials}
-                </div>
-                <h3 className="font-bold text-xl text-slate-900">{member.name}</h3>
-                <p className="text-blue-600 font-semibold text-base mt-1 mb-3">{member.role}</p>
-                <p className="text-slate-500 text-sm leading-relaxed flex-1">{member.bio}</p>
-              </div>
+              <motion.div
+                key={member.name + i}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={cardVariants}
+                className="bg-white rounded-[18px] border border-border-light p-7 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_12px_40px_rgba(10,36,99,0.10)] flex flex-col h-full"
+              >
+                {/* Decorative top accent */}
+                <div className="w-10 h-1 rounded-full bg-gradient-to-r from-sky to-navy mx-auto mb-5" />
+
+                <h3 className="font-bold text-lg text-navy leading-snug">{member.name}</h3>
+                <p className="text-sky font-semibold text-sm mt-2">{member.role}</p>
+                <p className="text-text-secondary text-sm mt-3 leading-relaxed flex-1">{member.line2}</p>
+              </motion.div>
             ))}
           </div>
         </div>

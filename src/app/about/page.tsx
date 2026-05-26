@@ -28,13 +28,13 @@ const team = [
   },
   {
     name: "Dr. Ajay Singh",
-    role: "Senior Student Counsellor",
-    line2: "Providing personalised counselling and career guidance to students.",
+    role: "Executive Head",
+    line2: "Sikar, Kota & Jaipur, Rajasthan",
   },
   {
     name: "Dr. Prince",
-    role: "Documentation & Visa Specialist",
-    line2: "Specialised in international student documentation and visa support.",
+    role: "Executive Head",
+    line2: "Madhya Pradesh",
   },
   {
     name: "Dr. Sakeel Mohammad",

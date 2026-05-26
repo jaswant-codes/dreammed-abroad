@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbyATH1zRSwU8O0Bwkno0J7RqP_3vqo9XMjiWzjTbGHRshE1wuzOO1v8G2V9zBYBFhYI/exec",
+      "https://script.google.com/macros/s/AKfycbxozUmz_vCgZXDltLsrpoXuntb1PRckA03BjL45lRJNcpLIzsmf1VPMT_3EQJWnilpvFw/exec",
       {
         method: "POST",
         headers: {
@@ -17,10 +17,10 @@ export async function POST(request: Request) {
 
     const result = await response.text();
 
-return NextResponse.json({
-  success: true,
-  result,
-});
+    return NextResponse.json({
+      success: true,
+      result,
+    });
   } catch (error) {
     return NextResponse.json(
       { error: "Internal server error" },

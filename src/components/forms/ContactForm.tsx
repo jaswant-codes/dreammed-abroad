@@ -27,7 +27,7 @@ export function ContactForm() {
     };
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://script.google.com/macros/s/AKfycbyATH1zRSwU8O0Bwkno0J7RqP_3vqo9XMjiWzjTbGHRshE1wuzOO1v8G2V9zBYBFhYI/exec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

@@ -1,54 +1,68 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
 
-const LEADS_FILE = path.join(process.cwd(), "data", "leads.json");
-
-async function ensureFile() {
-  const dir = path.dirname(LEADS_FILE);
-  try {
-    await fs.access(dir);
-  } catch {
-    await fs.mkdir(dir, { recursive: true });
-  }
-  try {
-    await fs.access(LEADS_FILE);
-  } catch {
-    await fs.writeFile(LEADS_FILE, "[]", "utf-8");
-  }
-}
+// IMPORTANT: Replace this with your actual deployed Google Script Web App URL
+// You can also use process.env.GOOGLE_SCRIPT_URL
+const SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "YOUR_ACTUAL_GOOGLE_SCRIPT_URL_HERE";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullName, phone, email, message } = body;
 
-    if (!fullName || !phone || !email || !message) {
+    // 1. Validate the URL is actually set
+    if (!SCRIPT_URL || SCRIPT_URL === "YOUR_ACTUAL_GOOGLE_SCRIPT_URL_HERE" || SCRIPT_URL === "GOOGLE_SCRIPT_URL") {
+      console.error("Configuration Error: Missing Google Script URL");
       return NextResponse.json(
-        { error: "All fields are required." },
-        { status: 400 }
+        { success: false, error: "Server Configuration Error: Missing Script URL" }, 
+        { status: 500 }
       );
     }
 
-    const lead = {
-      id: `contact_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      fullName,
-      phone,
-      email,
-      message,
-      source: "contact-page",
-      createdAt: new Date().toISOString(),
-    };
+    console.log("Sending to Google Script:", body);
 
-    await ensureFile();
-    const data = JSON.parse(await fs.readFile(LEADS_FILE, "utf-8"));
-    data.push(lead);
-    await fs.writeFile(LEADS_FILE, JSON.stringify(data, null, 2), "utf-8");
+    // 2. Perform fetch request with proper headers and cache busting
+    const response = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(body),
+      cache: "no-store", // Crucial for Next.js to prevent caching POST requests
+      redirect: "follow", // Ensure 302 redirects from Google Script are followed
+    });
 
-    return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
-  } catch {
+    const text = await response.text();
+    console.log("Google Script Response:", text);
+
+    // 3. Check for HTTP errors (e.g. 404, 500)
+    if (!response.ok) {
+      console.error("Google Script error status:", response.status);
+      throw new Error(`Google Script returned status ${response.status}`);
+    }
+
+    // 4. Safely parse the JSON response
+    let jsonResponse;
+    try {
+      jsonResponse = JSON.parse(text);
+    } catch (e) {
+      console.error("Failed to parse Google Script response as JSON. Received:", text);
+      throw new Error("Invalid response format from Google Script. Check if the Web App is returning HTML.");
+    }
+
+    // 5. Check if the Google Script itself reported an error in the JSON
+    if (!jsonResponse.success) {
+      console.error("Google Script reported failure:", jsonResponse.error);
+      throw new Error(jsonResponse.error || "Google Script failed to process the request");
+    }
+
+    // 6. Return successful response
+    return NextResponse.json({ success: true, data: jsonResponse });
+
+  } catch (error: any) {
+    console.error("API Route Error:", error);
+    
     return NextResponse.json(
-      { error: "Internal server error" },
+      { success: false, error: error.message || "Internal server error" },
       { status: 500 }
     );
   }

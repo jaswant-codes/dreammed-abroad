@@ -1,57 +1,58 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
 
-const LEADS_FILE = path.join(process.cwd(), "data", "leads.json");
-
-async function ensureFile() {
-  const dir = path.dirname(LEADS_FILE);
-  try {
-    await fs.access(dir);
-  } catch {
-    await fs.mkdir(dir, { recursive: true });
-  }
-  try {
-    await fs.access(LEADS_FILE);
-  } catch {
-    await fs.writeFile(LEADS_FILE, "[]", "utf-8");
-  }
-}
+// IMPORTANT: Replace this with your actual deployed Google Script Web App URL
+const SCRIPT_URL = process.env.GOOGLE_SCRIPT_URL || "YOUR_ACTUAL_GOOGLE_SCRIPT_URL_HERE";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { fullName, phone, email, neetScore, preferredCountry, budget, message, source } = body;
 
-    if (!fullName || !phone || !email) {
+    if (!SCRIPT_URL || SCRIPT_URL === "YOUR_ACTUAL_GOOGLE_SCRIPT_URL_HERE" || SCRIPT_URL === "GOOGLE_SCRIPT_URL") {
+      console.error("Configuration Error: Missing Google Script URL");
       return NextResponse.json(
-        { error: "Full name, phone, and email are required." },
-        { status: 400 }
+        { success: false, error: "Server Configuration Error: Missing Script URL" }, 
+        { status: 500 }
       );
     }
 
-    const lead = {
-      id: `lead_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
-      fullName,
-      phone,
-      email,
-      neetScore: neetScore || "",
-      preferredCountry: preferredCountry || "",
-      budget: budget || "",
-      message: message || "",
-      source: source || "apply-page",
-      createdAt: new Date().toISOString(),
-    };
+    console.log("Sending to Google Script (Apply):", body);
 
-    await ensureFile();
-    const data = JSON.parse(await fs.readFile(LEADS_FILE, "utf-8"));
-    data.push(lead);
-    await fs.writeFile(LEADS_FILE, JSON.stringify(data, null, 2), "utf-8");
+    const response = await fetch(SCRIPT_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+      body: JSON.stringify(body),
+      cache: "no-store",
+      redirect: "follow",
+    });
 
-    return NextResponse.json({ success: true, id: lead.id }, { status: 201 });
-  } catch {
+    const text = await response.text();
+    console.log("Google Script Response (Apply):", text);
+
+    if (!response.ok) {
+      throw new Error(`Google Script returned status ${response.status}`);
+    }
+
+    let jsonResponse;
+    try {
+      jsonResponse = JSON.parse(text);
+    } catch (e) {
+      throw new Error("Invalid response format from Google Script. Check if the Web App is returning HTML.");
+    }
+
+    if (!jsonResponse.success) {
+      throw new Error(jsonResponse.error || "Google Script failed to process the request");
+    }
+
+    return NextResponse.json({ success: true, data: jsonResponse });
+
+  } catch (error: any) {
+    console.error("API Route Error (Apply):", error);
+    
     return NextResponse.json(
-      { error: "Internal server error" },
+      { success: false, error: error.message || "Internal server error" },
       { status: 500 }
     );
   }

@@ -4,6 +4,8 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    console.log("BODY:", body);
+
     const response = await fetch(
       "https://script.google.com/macros/s/AKfycbxozUmz_vCgZXDltLsrpoXuntb1PRckA03BjL45lRJNcpLIzsmf1VPMT_3EQJWnilpvFw/exec",
       {
@@ -15,15 +17,24 @@ export async function POST(request: Request) {
       }
     );
 
-    const result = await response.text();
+    const text = await response.text();
+
+    console.log("GOOGLE RESPONSE:", text);
 
     return NextResponse.json({
       success: true,
-      result,
+      text,
     });
-  } catch (error) {
+
+  } catch (error: any) {
+
+    console.log("ERROR:", error);
+
     return NextResponse.json(
-      { error: "Internal server error" },
+      {
+        success: false,
+        error: error.message,
+      },
       { status: 500 }
     );
   }

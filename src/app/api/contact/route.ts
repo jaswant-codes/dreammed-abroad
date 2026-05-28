@@ -1,67 +1,52 @@
 import { NextResponse } from "next/server";
 
-const SCRIPT_URL = process.env.CONTACT_SCRIPT_URL;
+const SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbwIw5RCccoHUfcNhpjOeiwF5xKQC0KHBoa22XOKuwrQqV-zuTUhej8weyZ_2Jo8ATwC/exec";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    if (!SCRIPT_URL) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Missing Contact Script URL",
-        },
-        { status: 500 }
-      );
-    }
+    console.log("Sending contact form data:", body);
 
     const response = await fetch(SCRIPT_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
       },
       body: JSON.stringify(body),
+      redirect: "follow",
       cache: "no-store",
     });
 
     const text = await response.text();
 
-    let jsonResponse;
+    console.log("Google Script Response:", text);
+
+    let data;
 
     try {
-      jsonResponse = JSON.parse(text);
+      data = JSON.parse(text);
     } catch {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "Invalid response from Google Script",
-        },
-        { status: 500 }
-      );
+      throw new Error("Invalid response from Google Script");
     }
 
-    if (!response.ok || !jsonResponse.success) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: jsonResponse.error || "Google Script Error",
-        },
-        { status: 500 }
-      );
+    if (!response.ok || !data.success) {
+      throw new Error(data.error || "Failed to save contact form");
     }
 
     return NextResponse.json({
       success: true,
-      data: jsonResponse,
+      message: "Message sent successfully",
     });
 
   } catch (error: any) {
+    console.error("CONTACT API ERROR:", error);
+
     return NextResponse.json(
       {
         success: false,
-        error: error.message || "Internal Server Error",
+        error: error.message || "Something went wrong",
       },
       { status: 500 }
     );

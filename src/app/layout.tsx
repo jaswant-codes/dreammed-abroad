@@ -67,6 +67,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
+      <head><meta name="google-site-verification" content="NfN4uOKuxeUoANMDnqXbeB1KtcXH2upzIACQ2kRnQhQ" /></head>
       <body className="font-sans">
         <Navbar />
         <main className="min-h-screen">{children}</main>

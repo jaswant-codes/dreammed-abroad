@@ -33,11 +33,11 @@ export const NAV_LINKS = [
     label: "Study Destinations",
     href: "#",
     children: [
+      { label: "MBBS in Uzbekistan", href: "/mbbs-in-uzbekistan" },
+      { label: "MBBS in Kyrgyzstan", href: "/mbbs-in-kyrgyzstan" },
       { label: "MBBS in Russia", href: "/mbbs-in-russia" },
       { label: "MBBS in Kazakhstan", href: "/mbbs-in-kazakhstan" },
       { label: "MBBS in Georgia", href: "/mbbs-in-georgia" },
-      { label: "MBBS in Kyrgyzstan", href: "/mbbs-in-kyrgyzstan" },
-      { label: "MBBS in Uzbekistan", href: "/mbbs-in-uzbekistan" },
     ],
   },
   { label: "Universities", href: "/universities" },

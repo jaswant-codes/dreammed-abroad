@@ -2,6 +2,208 @@ import { Country } from "@/types";
 
 export const countries: Country[] = [
   {
+    name: "Uzbekistan",
+    slug: "mbbs-in-uzbekistan",
+    heroImage: "/images/countries/uzbekistan.jpg",
+    flagEmoji: "🇺🇿",
+    overview:
+      "Uzbekistan is emerging as a popular and affordable destination for MBBS abroad. With NMC-recognized universities, English-medium programs, and a welcoming culture, Uzbekistan offers Indian students quality medical education at competitive prices. The country has invested heavily in modernizing its medical education system.",
+    shortDescription:
+      "Emerging affordable destination with NMC-approved universities, modern facilities, and fees starting from ₹16 Lakhs total.",
+    tuitionRange: "₹16–28 Lakhs (Total)",
+    duration: "5+1 Years",
+    medium: "English",
+    recognition: ["NMC", "WHO"],
+    benefits: [
+      {
+        title: "Growing Medical Hub",
+        description:
+          "Uzbekistan is rapidly modernizing its medical education with new facilities and international partnerships.",
+      },
+      {
+        title: "Affordable Fees",
+        description:
+          "Competitive fee structure with total costs between ₹16-28 Lakhs for the full program.",
+      },
+      {
+        title: "Cultural Similarity",
+        description:
+          "Uzbek culture shares many similarities with Indian culture, making adaptation easier.",
+      },
+      {
+        title: "Direct Flights",
+        description:
+          "Direct flight connectivity from major Indian cities to Tashkent.",
+      },
+      {
+        title: "Growing Recognition",
+        description:
+          "Increasing number of Uzbek universities gaining NMC approval and international accreditation.",
+      },
+      {
+        title: "Warm Hospitality",
+        description:
+          "Known for exceptional hospitality, making international students feel at home.",
+      },
+    ],
+    topUniversities: [
+      "asia-international-university",
+      "namangan-state-university",
+      "tashkent-medical-academy",
+    ],
+    feeStructure: [
+      { item: "Tuition Fee (per year)", cost: "₹2.2 – 4.0 Lakhs" },
+      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.7 Lakhs" },
+      { item: "Food (per month)", cost: "₹4,000 – 8,000" },
+      { item: "Total 6-Year Cost", cost: "₹16 – 28 Lakhs" },
+    ],
+    eligibility: [
+      "Minimum 50% in PCB in Class 12th",
+      "NEET Qualified",
+      "Minimum age 17 years",
+      "Valid passport",
+    ],
+    admissionProcess: [
+      "Reach out to DreamMed Abroad",
+      "Get personalized university recommendations",
+      "Document submission and verification",
+      "Receive admission letter",
+      "Visa assistance",
+      "Departure and arrival support",
+    ],
+    documentsRequired: [
+      "10th & 12th Mark Sheets",
+      "NEET Scorecard",
+      "Valid Passport",
+      "Passport-size photographs",
+      "Medical certificate",
+      "Police clearance certificate",
+    ],
+    hostelAndFood:
+      "Universities provide comfortable hostel rooms with all essential amenities. Uzbek cuisine is diverse and includes many dishes similar to Indian food. Indian mess facilities are available at universities with significant Indian student populations.",
+    careerOpportunities: [
+      "Practice in India after clearing FMGE/NExT",
+      "Specialization opportunities in India and abroad",
+      "Growing healthcare sector in Uzbekistan",
+    ],
+    faqs: [
+      {
+        question: "Is MBBS from Uzbekistan valid in India?",
+        answer:
+          "Yes, MBBS from NMC-approved Uzbek universities is valid in India after passing the FMGE/NExT exam.",
+      },
+      {
+        question: "What is the climate of Uzbekistan?",
+        answer:
+          "Uzbekistan has a continental climate with hot summers and cold winters. Tashkent has temperatures ranging from -5°C in winter to 40°C in summer.",
+      },
+    ],
+    metaTitle: "MBBS in Uzbekistan 2025 | Affordable Medical Education | DreamMed Abroad",
+    metaDescription:
+      "Study MBBS in Uzbekistan with affordable fees from ₹16 Lakhs. NMC-approved universities, English medium programs. Apply through DreamMed Abroad.",
+  },
+  {
+    name: "Kyrgyzstan",
+    slug: "mbbs-in-kyrgyzstan",
+    heroImage: "/images/countries/kyrgyzstan.jpg",
+    flagEmoji: "🇰🇬",
+    overview:
+      "Kyrgyzstan offers one of the most affordable MBBS programs for Indian students. Despite low costs, the quality of education is high with NMC-recognized universities providing English-medium instruction. The country is known for its natural beauty, friendly people, and a growing Indian student community.",
+    shortDescription:
+      "Most affordable MBBS destination with fees starting from ₹15 Lakhs total, NMC-approved universities, and growing Indian community.",
+    tuitionRange: "₹15–25 Lakhs (Total)",
+    duration: "5+1 Years",
+    medium: "English",
+    recognition: ["NMC", "WHO"],
+    benefits: [
+      {
+        title: "Most Affordable",
+        description:
+          "Kyrgyzstan offers the lowest MBBS fees among popular abroad destinations, starting from ₹15 Lakhs total.",
+      },
+      {
+        title: "NMC Recognized",
+        description:
+          "Universities are approved by NMC and WHO ensuring degree validity in India.",
+      },
+      {
+        title: "No Donation Fees",
+        description:
+          "Completely transparent fee structure with no hidden charges.",
+      },
+      {
+        title: "Indian Student Community",
+        description:
+          "Large and growing Indian student population providing a supportive environment.",
+      },
+      {
+        title: "Simple Admission",
+        description:
+          "Straightforward admission process with minimal documentation requirements.",
+      },
+      {
+        title: "Visa on Arrival",
+        description:
+          "Indian students can get visa on arrival, making the process hassle-free.",
+      },
+    ],
+    topUniversities: [
+      "jalal-abad-state-university",
+      "jalal-abad-international-university",
+      "osh-state-university",
+      "international-school-of-medicine-bishkek",
+    ],
+    feeStructure: [
+      { item: "Tuition Fee (per year)", cost: "₹2.0 – 3.5 Lakhs" },
+      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.6 Lakhs" },
+      { item: "Food (per month)", cost: "₹4,000 – 7,000" },
+      { item: "Total 6-Year Cost", cost: "₹15 – 25 Lakhs" },
+    ],
+    eligibility: [
+      "Minimum 50% in PCB in Class 12th",
+      "NEET Qualified",
+      "Minimum age 17 years",
+      "Valid passport",
+    ],
+    admissionProcess: [
+      "Contact DreamMed Abroad",
+      "University recommendation based on budget",
+      "Submit documents",
+      "Get admission letter",
+      "Visa processing",
+      "Travel to Kyrgyzstan",
+    ],
+    documentsRequired: [
+      "10th & 12th Mark Sheets",
+      "NEET Scorecard",
+      "Valid Passport",
+      "Passport-size photographs",
+      "Medical certificate",
+    ],
+    hostelAndFood:
+      "Hostels are available at affordable rates within university campuses. Indian mess facilities are common, especially in universities with large Indian student populations. Basic amenities including Wi-Fi and heating are provided.",
+    careerOpportunities: [
+      "Practice in India after FMGE/NExT",
+      "Further studies in India or abroad",
+      "Healthcare roles in Central Asian countries",
+    ],
+    faqs: [
+      {
+        question: "Is MBBS from Kyrgyzstan recognized in India?",
+        answer:
+          "Yes, MBBS from NMC-approved Kyrgyz universities is recognized in India after passing FMGE/NExT.",
+      },
+      {
+        question: "What is the total cost of MBBS in Kyrgyzstan?",
+        answer:
+          "Total cost for the full course ranges from ₹15 to ₹25 Lakhs including tuition, hostel, and living expenses.",
+      },
+    ],
+    metaTitle: "MBBS in Kyrgyzstan 2025 | Most Affordable | DreamMed Abroad",
+    metaDescription:
+      "Study MBBS in Kyrgyzstan at the most affordable fees starting ₹15 Lakhs. NMC-approved universities, English medium. Apply with DreamMed Abroad.",
+  },
+  {
     name: "Russia",
     slug: "mbbs-in-russia",
     heroImage: "/images/countries/russia.jpg",
@@ -47,7 +249,7 @@ export const countries: Country[] = [
       },
     ],
     topUniversities: [
-      "bashkir-state-medical-university",
+      "sevastopol-state-university",
       "kazan-federal-university",
       "orenburg-state-medical-university",
     ],
@@ -170,7 +372,6 @@ export const countries: Country[] = [
       },
     ],
     topUniversities: [
-      "al-farabi-kazakh-national-university",
       "kazakh-national-medical-university",
     ],
     feeStructure: [
@@ -337,205 +538,6 @@ export const countries: Country[] = [
     metaTitle: "MBBS in Georgia 2025 | European Standard Education | DreamMed Abroad",
     metaDescription:
       "Study MBBS in Georgia with European-standard education. NMC-approved universities, fees from ₹22 Lakhs. Apply through DreamMed Abroad.",
-  },
-  {
-    name: "Kyrgyzstan",
-    slug: "mbbs-in-kyrgyzstan",
-    heroImage: "/images/countries/kyrgyzstan.jpg",
-    flagEmoji: "🇰🇬",
-    overview:
-      "Kyrgyzstan offers one of the most affordable MBBS programs for Indian students. Despite low costs, the quality of education is high with NMC-recognized universities providing English-medium instruction. The country is known for its natural beauty, friendly people, and a growing Indian student community.",
-    shortDescription:
-      "Most affordable MBBS destination with fees starting from ₹15 Lakhs total, NMC-approved universities, and growing Indian community.",
-    tuitionRange: "₹15–25 Lakhs (Total)",
-    duration: "5+1 Years",
-    medium: "English",
-    recognition: ["NMC", "WHO"],
-    benefits: [
-      {
-        title: "Most Affordable",
-        description:
-          "Kyrgyzstan offers the lowest MBBS fees among popular abroad destinations, starting from ₹15 Lakhs total.",
-      },
-      {
-        title: "NMC Recognized",
-        description:
-          "Universities are approved by NMC and WHO ensuring degree validity in India.",
-      },
-      {
-        title: "No Donation Fees",
-        description:
-          "Completely transparent fee structure with no hidden charges.",
-      },
-      {
-        title: "Indian Student Community",
-        description:
-          "Large and growing Indian student population providing a supportive environment.",
-      },
-      {
-        title: "Simple Admission",
-        description:
-          "Straightforward admission process with minimal documentation requirements.",
-      },
-      {
-        title: "Visa on Arrival",
-        description:
-          "Indian students can get visa on arrival, making the process hassle-free.",
-      },
-    ],
-    topUniversities: [
-      "international-school-of-medicine-bishkek",
-      "osh-state-university",
-    ],
-    feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹2.0 – 3.5 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.6 Lakhs" },
-      { item: "Food (per month)", cost: "₹4,000 – 7,000" },
-      { item: "Total 6-Year Cost", cost: "₹15 – 25 Lakhs" },
-    ],
-    eligibility: [
-      "Minimum 50% in PCB in Class 12th",
-      "NEET Qualified",
-      "Minimum age 17 years",
-      "Valid passport",
-    ],
-    admissionProcess: [
-      "Contact DreamMed Abroad",
-      "University recommendation based on budget",
-      "Submit documents",
-      "Get admission letter",
-      "Visa processing",
-      "Travel to Kyrgyzstan",
-    ],
-    documentsRequired: [
-      "10th & 12th Mark Sheets",
-      "NEET Scorecard",
-      "Valid Passport",
-      "Passport-size photographs",
-      "Medical certificate",
-    ],
-    hostelAndFood:
-      "Hostels are available at affordable rates within university campuses. Indian mess facilities are common, especially in universities with large Indian student populations. Basic amenities including Wi-Fi and heating are provided.",
-    careerOpportunities: [
-      "Practice in India after FMGE/NExT",
-      "Further studies in India or abroad",
-      "Healthcare roles in Central Asian countries",
-    ],
-    faqs: [
-      {
-        question: "Is MBBS from Kyrgyzstan recognized in India?",
-        answer:
-          "Yes, MBBS from NMC-approved Kyrgyz universities is recognized in India after passing FMGE/NExT.",
-      },
-      {
-        question: "What is the total cost of MBBS in Kyrgyzstan?",
-        answer:
-          "Total cost for the full course ranges from ₹15 to ₹25 Lakhs including tuition, hostel, and living expenses.",
-      },
-    ],
-    metaTitle: "MBBS in Kyrgyzstan 2025 | Most Affordable | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Kyrgyzstan at the most affordable fees starting ₹15 Lakhs. NMC-approved universities, English medium. Apply with DreamMed Abroad.",
-  },
-  {
-    name: "Uzbekistan",
-    slug: "mbbs-in-uzbekistan",
-    heroImage: "/images/countries/uzbekistan.jpg",
-    flagEmoji: "🇺🇿",
-    overview:
-      "Uzbekistan is emerging as a popular and affordable destination for MBBS abroad. With NMC-recognized universities, English-medium programs, and a welcoming culture, Uzbekistan offers Indian students quality medical education at competitive prices. The country has invested heavily in modernizing its medical education system.",
-    shortDescription:
-      "Emerging affordable destination with NMC-approved universities, modern facilities, and fees starting from ₹16 Lakhs total.",
-    tuitionRange: "₹16–28 Lakhs (Total)",
-    duration: "5+1 Years",
-    medium: "English",
-    recognition: ["NMC", "WHO"],
-    benefits: [
-      {
-        title: "Growing Medical Hub",
-        description:
-          "Uzbekistan is rapidly modernizing its medical education with new facilities and international partnerships.",
-      },
-      {
-        title: "Affordable Fees",
-        description:
-          "Competitive fee structure with total costs between ₹16-28 Lakhs for the full program.",
-      },
-      {
-        title: "Cultural Similarity",
-        description:
-          "Uzbek culture shares many similarities with Indian culture, making adaptation easier.",
-      },
-      {
-        title: "Direct Flights",
-        description:
-          "Direct flight connectivity from major Indian cities to Tashkent.",
-      },
-      {
-        title: "Growing Recognition",
-        description:
-          "Increasing number of Uzbek universities gaining NMC approval and international accreditation.",
-      },
-      {
-        title: "Warm Hospitality",
-        description:
-          "Known for exceptional hospitality, making international students feel at home.",
-      },
-    ],
-    topUniversities: [
-      "tashkent-medical-academy",
-      "samarkand-state-medical-university",
-    ],
-    feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹2.2 – 4.0 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.7 Lakhs" },
-      { item: "Food (per month)", cost: "₹4,000 – 8,000" },
-      { item: "Total 6-Year Cost", cost: "₹16 – 28 Lakhs" },
-    ],
-    eligibility: [
-      "Minimum 50% in PCB in Class 12th",
-      "NEET Qualified",
-      "Minimum age 17 years",
-      "Valid passport",
-    ],
-    admissionProcess: [
-      "Reach out to DreamMed Abroad",
-      "Get personalized university recommendations",
-      "Document submission and verification",
-      "Receive admission letter",
-      "Visa assistance",
-      "Departure and arrival support",
-    ],
-    documentsRequired: [
-      "10th & 12th Mark Sheets",
-      "NEET Scorecard",
-      "Valid Passport",
-      "Passport-size photographs",
-      "Medical certificate",
-      "Police clearance certificate",
-    ],
-    hostelAndFood:
-      "Universities provide comfortable hostel rooms with all essential amenities. Uzbek cuisine is diverse and includes many dishes similar to Indian food. Indian mess facilities are available at universities with significant Indian student populations.",
-    careerOpportunities: [
-      "Practice in India after clearing FMGE/NExT",
-      "Specialization opportunities in India and abroad",
-      "Growing healthcare sector in Uzbekistan",
-    ],
-    faqs: [
-      {
-        question: "Is MBBS from Uzbekistan valid in India?",
-        answer:
-          "Yes, MBBS from NMC-approved Uzbek universities is valid in India after passing the FMGE/NExT exam.",
-      },
-      {
-        question: "What is the climate of Uzbekistan?",
-        answer:
-          "Uzbekistan has a continental climate with hot summers and cold winters. Tashkent has temperatures ranging from -5°C in winter to 40°C in summer.",
-      },
-    ],
-    metaTitle: "MBBS in Uzbekistan 2025 | Affordable Medical Education | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Uzbekistan with affordable fees from ₹16 Lakhs. NMC-approved universities, English medium programs. Apply through DreamMed Abroad.",
   },
 ];
 

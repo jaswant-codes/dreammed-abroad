@@ -117,7 +117,7 @@ export default async function UniversityPage({ params }: PageProps) {
                   <span className="font-semibold text-sky">{uni.tuitionFee}</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-border-light">
-                  <span className="text-sm text-text-secondary">Hostel Fee</span>
+                  <span className="text-sm text-text-secondary">Hostel + Mess</span>
                   <span className="font-semibold text-navy">{uni.hostelFee}</span>
                 </div>
                 <div className="flex justify-between items-center py-3">

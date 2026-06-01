@@ -62,7 +62,7 @@ export default function UniversitiesPage() {
                         <span className="font-semibold text-navy">{uni.tuitionFee}</span>
                       </div>
                       <div className="flex justify-between text-sm">
-                        <span className="text-text-secondary">Hostel Fee</span>
+                        <span className="text-text-secondary">Hostel + Mess</span>
                         <span className="font-medium text-text-primary">{uni.hostelFee}</span>
                       </div>
                       <div className="flex justify-between text-sm">

@@ -9,8 +9,8 @@ export const countries: Country[] = [
     overview:
       "Uzbekistan is emerging as a popular and affordable destination for MBBS abroad. With NMC-recognized universities, English-medium programs, and a welcoming culture, Uzbekistan offers Indian students quality medical education at competitive prices. The country has invested heavily in modernizing its medical education system.",
     shortDescription:
-      "Emerging affordable destination with NMC-approved universities, modern facilities, and fees starting from ₹16 Lakhs total.",
-    tuitionRange: "₹16–28 Lakhs (Total)",
+      "Emerging affordable destination with NMC-approved universities, modern facilities, and fees starting from ₹36 Lakhs total.",
+    tuitionRange: "₹36–45 Lakhs (Total)",
     duration: "5+1 Years",
     medium: "English",
     recognition: ["NMC", "WHO"],
@@ -52,10 +52,9 @@ export const countries: Country[] = [
       "tashkent-medical-academy",
     ],
     feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹2.2 – 4.0 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.7 Lakhs" },
-      { item: "Food (per month)", cost: "₹4,000 – 8,000" },
-      { item: "Total 6-Year Cost", cost: "₹16 – 28 Lakhs" },
+      { item: "Tuition Fee (per year)", cost: "₹4.0 – 5.0 Lakhs" },
+      { item: "Hostel + Mess (per year)", cost: "₹2.0 – 2.5 Lakhs" },
+      { item: "Total 6-Year Cost", cost: "₹36 – 45 Lakhs" },
     ],
     eligibility: [
       "Minimum 50% in PCB in Class 12th",
@@ -99,8 +98,7 @@ export const countries: Country[] = [
       },
     ],
     metaTitle: "MBBS in Uzbekistan 2025 | Affordable Medical Education | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Uzbekistan with affordable fees from ₹16 Lakhs. NMC-approved universities, English medium programs. Apply through DreamMed Abroad.",
+    metaDescription: "Study MBBS in Uzbekistan with affordable fees from ₹36 Lakhs. NMC-approved universities, English medium programs. Apply through DreamMed Abroad.",
   },
   {
     name: "Kyrgyzstan",
@@ -110,8 +108,8 @@ export const countries: Country[] = [
     overview:
       "Kyrgyzstan offers one of the most affordable MBBS programs for Indian students. Despite low costs, the quality of education is high with NMC-recognized universities providing English-medium instruction. The country is known for its natural beauty, friendly people, and a growing Indian student community.",
     shortDescription:
-      "Most affordable MBBS destination with fees starting from ₹15 Lakhs total, NMC-approved universities, and growing Indian community.",
-    tuitionRange: "₹15–25 Lakhs (Total)",
+      "Most affordable MBBS destination with fees starting from ₹35 Lakhs total, NMC-approved universities, and growing Indian community.",
+    tuitionRange: "₹35–41 Lakhs (Total)",
     duration: "5+1 Years",
     medium: "English",
     recognition: ["NMC", "WHO"],
@@ -119,7 +117,7 @@ export const countries: Country[] = [
       {
         title: "Most Affordable",
         description:
-          "Kyrgyzstan offers the lowest MBBS fees among popular abroad destinations, starting from ₹15 Lakhs total.",
+          "Kyrgyzstan offers the lowest MBBS fees among popular abroad destinations, starting from ₹35 Lakhs total.",
       },
       {
         title: "NMC Recognized",
@@ -154,10 +152,9 @@ export const countries: Country[] = [
       "international-school-of-medicine-bishkek",
     ],
     feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹2.0 – 3.5 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.3 – 0.6 Lakhs" },
-      { item: "Food (per month)", cost: "₹4,000 – 7,000" },
-      { item: "Total 6-Year Cost", cost: "₹15 – 25 Lakhs" },
+      { item: "Tuition Fee (per year)", cost: "₹3.8 – 4.5 Lakhs" },
+      { item: "Hostel + Mess (per year)", cost: "₹2.0 – 2.3 Lakhs" },
+      { item: "Total 6-Year Cost", cost: "₹35 – 41 Lakhs" },
     ],
     eligibility: [
       "Minimum 50% in PCB in Class 12th",
@@ -196,12 +193,11 @@ export const countries: Country[] = [
       {
         question: "What is the total cost of MBBS in Kyrgyzstan?",
         answer:
-          "Total cost for the full course ranges from ₹15 to ₹25 Lakhs including tuition, hostel, and living expenses.",
+          "Total cost for the full course ranges from ₹35 to ₹41 Lakhs including tuition, hostel, and living expenses.",
       },
     ],
     metaTitle: "MBBS in Kyrgyzstan 2025 | Most Affordable | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Kyrgyzstan at the most affordable fees starting ₹15 Lakhs. NMC-approved universities, English medium. Apply with DreamMed Abroad.",
+    metaDescription: "Study MBBS in Kyrgyzstan at the most affordable fees starting ₹35 Lakhs. NMC-approved universities, English medium. Apply with DreamMed Abroad.",
   },
   {
     name: "Russia",
@@ -211,8 +207,8 @@ export const countries: Country[] = [
     overview:
       "Russia is one of the most popular destinations for Indian students seeking quality MBBS education abroad. With over 50 NMC-approved medical universities, world-class infrastructure, and affordable tuition fees, Russia has been a top choice for decades. Russian medical universities follow a 6-year MBBS program taught in English, recognized globally by WHO, NMC, and other international medical bodies.",
     shortDescription:
-      "Top destination for MBBS with 50+ NMC-approved universities, world-class education, and affordable fees starting from ₹20 Lakhs total.",
-    tuitionRange: "₹20–35 Lakhs (Total)",
+      "Top destination for MBBS with 50+ NMC-approved universities, world-class education, and affordable fees starting from ₹44 Lakhs total.",
+    tuitionRange: "₹44–48 Lakhs (Total)",
     duration: "6 Years (including internship)",
     medium: "English",
     recognition: ["NMC", "WHO", "ECFMG", "WFME", "FAIMER"],
@@ -254,10 +250,9 @@ export const countries: Country[] = [
       "orenburg-state-medical-university",
     ],
     feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹3.0 – 5.5 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.5 – 1.0 Lakhs" },
-      { item: "Food (per month)", cost: "₹5,000 – 10,000" },
-      { item: "Total 6-Year Cost", cost: "₹20 – 35 Lakhs" },
+      { item: "Tuition Fee (per year)", cost: "₹4.8 – 5.0 Lakhs" },
+      { item: "Hostel + Mess (per year)", cost: "₹2.5 – 3.0 Lakhs" },
+      { item: "Total 6-Year Cost", cost: "₹44 – 48 Lakhs" },
     ],
     eligibility: [
       "Minimum 50% in PCB in Class 12th (40% for SC/ST/OBC)",
@@ -314,7 +309,7 @@ export const countries: Country[] = [
       {
         question: "What is the total cost of MBBS in Russia?",
         answer:
-          "The total cost for 6 years including tuition, hostel, and living expenses ranges from ₹20 to ₹35 Lakhs depending on the university.",
+          "The total cost for 6 years including tuition, hostel, and living expenses ranges from ₹44 to ₹48 Lakhs depending on the university.",
       },
       {
         question: "Is it safe for Indian students in Russia?",
@@ -323,8 +318,7 @@ export const countries: Country[] = [
       },
     ],
     metaTitle: "MBBS in Russia 2025 | Top Universities, Fees, Admission | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Russia from top NMC-approved universities. Affordable fees starting ₹20 Lakhs, English medium, and guaranteed admission. Apply now with DreamMed Abroad.",
+    metaDescription: "Study MBBS in Russia from top NMC-approved universities. Affordable fees starting ₹44 Lakhs, English medium, and guaranteed admission. Apply now with DreamMed Abroad.",
   },
   {
     name: "Kazakhstan",
@@ -334,8 +328,8 @@ export const countries: Country[] = [
     overview:
       "Kazakhstan is rapidly becoming a preferred destination for Indian medical students. With modern infrastructure, NMC-recognized universities, and affordable fee structures, Kazakhstan offers excellent value. The country's medical universities follow international standards with English-medium programs and hands-on clinical training.",
     shortDescription:
-      "Emerging destination with modern universities, affordable fees starting from ₹18 Lakhs total, and excellent clinical exposure.",
-    tuitionRange: "₹18–30 Lakhs (Total)",
+      "Emerging destination with modern universities, affordable fees starting from ₹41 Lakhs total, and excellent clinical exposure.",
+    tuitionRange: "₹41 Lakhs (Total)",
     duration: "5+1 Years",
     medium: "English",
     recognition: ["NMC", "WHO", "WFME"],
@@ -375,10 +369,9 @@ export const countries: Country[] = [
       "kazakh-national-medical-university",
     ],
     feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹2.5 – 4.5 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.4 – 0.8 Lakhs" },
-      { item: "Food (per month)", cost: "₹5,000 – 8,000" },
-      { item: "Total 6-Year Cost", cost: "₹18 – 30 Lakhs" },
+      { item: "Tuition Fee (per year)", cost: "₹4.5 Lakhs" },
+      { item: "Hostel + Mess (per year)", cost: "₹2.3 Lakhs" },
+      { item: "Total 6-Year Cost", cost: "₹41 Lakhs" },
     ],
     eligibility: [
       "Minimum 50% in PCB in Class 12th (40% for SC/ST/OBC)",
@@ -429,8 +422,7 @@ export const countries: Country[] = [
       },
     ],
     metaTitle: "MBBS in Kazakhstan 2025 | Fees, Top Universities | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Kazakhstan at NMC-approved universities. Fees from ₹18 Lakhs, English medium, safe environment. Apply through DreamMed Abroad.",
+    metaDescription: "Study MBBS in Kazakhstan at NMC-approved universities. Fees from ₹41 Lakhs, English medium, safe environment. Apply through DreamMed Abroad.",
   },
   {
     name: "Georgia",
@@ -440,8 +432,8 @@ export const countries: Country[] = [
     overview:
       "Georgia, located at the crossroads of Europe and Asia, has emerged as a leading destination for medical education. Georgian medical universities are recognized by NMC, WHO, and follow European standards of education. The country offers a unique blend of European culture, affordable living, and high-quality English-medium MBBS programs.",
     shortDescription:
-      "European-standard medical education with NMC-approved universities, affordable fees from ₹22 Lakhs, and vibrant student life.",
-    tuitionRange: "₹22–38 Lakhs (Total)",
+      "European-standard medical education with NMC-approved universities, affordable fees from ₹46 Lakhs, and vibrant student life.",
+    tuitionRange: "₹46–48 Lakhs (Total)",
     duration: "6 Years",
     medium: "English",
     recognition: ["NMC", "WHO", "WFME", "ECFMG"],
@@ -482,10 +474,9 @@ export const countries: Country[] = [
       "european-university-georgia",
     ],
     feeStructure: [
-      { item: "Tuition Fee (per year)", cost: "₹3.5 – 6.0 Lakhs" },
-      { item: "Hostel Fee (per year)", cost: "₹0.6 – 1.2 Lakhs" },
-      { item: "Food (per month)", cost: "₹6,000 – 12,000" },
-      { item: "Total 6-Year Cost", cost: "₹22 – 38 Lakhs" },
+      { item: "Tuition Fee (per year)", cost: "₹4.8 – 5.0 Lakhs" },
+      { item: "Hostel + Mess (per year)", cost: "₹2.8 – 3.0 Lakhs" },
+      { item: "Total 6-Year Cost", cost: "₹46 – 48 Lakhs" },
     ],
     eligibility: [
       "Minimum 50% in PCB in Class 12th",
@@ -536,8 +527,7 @@ export const countries: Country[] = [
       },
     ],
     metaTitle: "MBBS in Georgia 2025 | European Standard Education | DreamMed Abroad",
-    metaDescription:
-      "Study MBBS in Georgia with European-standard education. NMC-approved universities, fees from ₹22 Lakhs. Apply through DreamMed Abroad.",
+    metaDescription: "Study MBBS in Georgia with European-standard education. NMC-approved universities, fees from ₹46 Lakhs. Apply through DreamMed Abroad.",
   },
 ];
 

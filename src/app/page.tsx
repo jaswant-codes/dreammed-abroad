@@ -7,10 +7,12 @@ import { TopUniversities } from "@/components/home/TopUniversities";
 import { Testimonials } from "@/components/home/Testimonials";
 import { FAQSection } from "@/components/home/FAQSection";
 import { CTABanner } from "@/components/home/CTABanner";
+import { HomepageLeadPopup } from "@/components/home/HomepageLeadPopup";
 
 export default function HomePage() {
   return (
     <>
+      <HomepageLeadPopup />
       <HeroSection />
       <TrustedStats />
       <CountriesSection />

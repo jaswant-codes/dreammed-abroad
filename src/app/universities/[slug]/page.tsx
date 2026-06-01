@@ -5,6 +5,7 @@ import { universities, getUniversityBySlug } from "@/data/universities";
 import { SITE_CONFIG, WHATSAPP_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { LeadForm } from "@/components/forms/LeadForm";
+import { UniversityGallery } from "@/components/university/UniversityGallery";
 import {
   ArrowRight,
   Award,
@@ -103,6 +104,8 @@ export default async function UniversityPage({ params }: PageProps) {
           <p className="text-text-secondary leading-relaxed max-w-4xl">{uni.overview}</p>
         </div>
       </section>
+
+      <UniversityGallery universityName={uni.name} images={uni.gallery ?? []} />
 
       {/* Fee & Recognition */}
       <section className="py-16 bg-surface">

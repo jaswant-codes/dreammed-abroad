@@ -40,6 +40,10 @@ export interface University {
   eligibility: string[];
   admissionProcess: string[];
   facilities: string[];
+  gallery?: {
+    src: string;
+    alt: string;
+  }[];
   metaTitle: string;
   metaDescription: string;
 }

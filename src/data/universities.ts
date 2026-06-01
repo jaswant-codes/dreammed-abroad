@@ -38,6 +38,11 @@ export const universities: University[] = [
       "24/7 security",
       "Sports area",
     ],
+    gallery: [
+      { src: "/university-gallery/aiu-campus.webp", alt: "Asia International University campus" },
+      { src: "/university-gallery/aiu-classes.webp", alt: "Asia International University classes" },
+      { src: "/university-gallery/aiu-hostel.webp", alt: "Asia International University hostel" },
+    ],
     metaTitle: "Asia International University | MBBS in Uzbekistan | DreamMed Abroad",
     metaDescription:
       "Study MBBS at Asia International University, Bukhara. Affordable fees ₹2.8L/year, NMC approved. Apply via DreamMed Abroad.",
@@ -79,6 +84,12 @@ export const universities: University[] = [
       "Indian mess",
       "Sports facilities",
     ],
+    gallery: [
+      { src: "/university-gallery/nsu-campus.webp", alt: "Namangan State University campus" },
+      { src: "/university-gallery/nsu-classes.webp", alt: "Namangan State University classes" },
+      { src: "/university-gallery/nsu-hostel.webp", alt: "Namangan State University hostel" },
+      { src: "/university-gallery/nsu-mess.webp", alt: "Namangan State University mess" },
+    ],
     metaTitle: "Namangan State University | MBBS in Uzbekistan | DreamMed Abroad",
     metaDescription:
       "Study MBBS at Namangan State University, est. 1942. NMC approved, affordable fees. Apply through DreamMed Abroad.",
@@ -118,6 +129,13 @@ export const universities: University[] = [
       "Sports complex",
       "Hostel",
       "Canteen",
+    ],
+    gallery: [
+      { src: "/university-gallery/jasu-campus.webp", alt: "Jalal-Abad State University campus" },
+      { src: "/university-gallery/jasu-classes.webp", alt: "Jalal-Abad State University classes" },
+      { src: "/university-gallery/jasu-hostel.webp", alt: "Jalal-Abad State University hostel" },
+      { src: "/university-gallery/jasu-students.webp", alt: "Jalal-Abad State University students" },
+      { src: "/university-gallery/jasu-boyshostel.webp", alt: "Jalal-Abad State University boys hostel" },
     ],
     metaTitle: "Jalal-Abad State University | MBBS in Kyrgyzstan | DreamMed Abroad",
     metaDescription:
@@ -159,6 +177,14 @@ export const universities: University[] = [
       "Student support",
       "Canteen",
     ],
+    gallery: [
+      { src: "/university-gallery/jiu-campus.webp", alt: "Jalal-Abad International University campus" },
+      { src: "/university-gallery/jiu-classes.webp", alt: "Jalal-Abad International University classes" },
+      { src: "/university-gallery/jiu-hospital.webp", alt: "Jalal-Abad International University hospital" },
+      { src: "/university-gallery/jiu-laibrary.webp", alt: "Jalal-Abad International University library" },
+      { src: "/university-gallery/jiu-girlshostel.webp", alt: "Jalal-Abad International University girls hostel" },
+      { src: "/university-gallery/jiu-boyshostel.webp", alt: "Jalal-Abad International University boys hostel" },
+    ],
     metaTitle: "Jalal-Abad International University | MBBS in Kyrgyzstan | DreamMed Abroad",
     metaDescription:
       "Study MBBS at Jalal-Abad International University, Kyrgyzstan. NMC approved, English medium. Apply through DreamMed Abroad.",
@@ -197,6 +223,16 @@ export const universities: University[] = [
       "Library",
       "Hostel",
       "Canteen",
+    ],
+    gallery: [
+      { src: "/university-gallery/osu-campus.webp", alt: "Osh State University campus" },
+      { src: "/university-gallery/osu-classes.webp", alt: "Osh State University classes" },
+      { src: "/university-gallery/osu-hostel.webp", alt: "Osh State University hostel" },
+      { src: "/university-gallery/osu-food.webp", alt: "Osh State University food" },
+      { src: "/university-gallery/osu-lab.webp", alt: "Osh State University lab" },
+      { src: "/university-gallery/osu-laib.webp", alt: "Osh State University library" },
+      { src: "/university-gallery/osu-sports.webp", alt: "Osh State University sports" },
+      { src: "/university-gallery/osu-students.webp", alt: "Osh State University students" },
     ],
     metaTitle: "Osh State University | MBBS in Kyrgyzstan | DreamMed Abroad",
     metaDescription:
@@ -238,6 +274,14 @@ export const universities: University[] = [
       "12+ affiliated hospitals",
       "Sports complex",
       "Hostel",
+    ],
+    gallery: [
+      { src: "/university-gallery/ssmu-campus.webp", alt: "Sevastopol State University campus" },
+      { src: "/university-gallery/ssmu-campusb.webp", alt: "Sevastopol State University campus view" },
+      { src: "/university-gallery/ssmu-classes.webp", alt: "Sevastopol State University classes" },
+      { src: "/university-gallery/ssmu-hostel.webp", alt: "Sevastopol State University hostel" },
+      { src: "/university-gallery/ssmu-hostel1.webp", alt: "Sevastopol State University hostel room" },
+      { src: "/university-gallery/ssmu-teacher.webp", alt: "Sevastopol State University students and teacher" },
     ],
     metaTitle: "Sevastopol State University | MBBS in Russia | DreamMed Abroad",
     metaDescription:

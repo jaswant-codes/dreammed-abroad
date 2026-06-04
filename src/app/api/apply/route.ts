@@ -6,6 +6,16 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    if (!body.legalConsent) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Privacy Policy and Terms consent is required",
+        },
+        { status: 400 }
+      );
+    }
+
     if (!SCRIPT_URL) {
       return NextResponse.json(
         {
@@ -32,7 +42,7 @@ export async function POST(request: Request) {
 
     try {
       jsonResponse = JSON.parse(text);
-    } catch (e) {
+    } catch {
       return NextResponse.json(
         {
           success: false,
@@ -57,11 +67,13 @@ export async function POST(request: Request) {
       data: jsonResponse,
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : "Internal Server Error";
+
     return NextResponse.json(
       {
         success: false,
-        error: error.message || "Internal Server Error",
+        error: message,
       },
       { status: 500 }
     );

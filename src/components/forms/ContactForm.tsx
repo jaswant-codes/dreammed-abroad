@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { LegalConsent } from "@/components/forms/LegalConsent";
 
 export function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -18,11 +19,20 @@ export function ContactForm() {
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const legalConsent = formData.get("legalConsent") === "on";
+
+    if (!legalConsent) {
+      setError("Please accept the Privacy Policy and Terms & Conditions to continue.");
+      setLoading(false);
+      return;
+    }
+
     const data = {
       fullName: formData.get("fullName") as string,
       phone: formData.get("phone") as string,
       email: formData.get("email") as string,
       message: formData.get("message") as string,
+      legalConsent,
       source: "contact-page",
     };
 
@@ -41,8 +51,8 @@ export function ContactForm() {
       
       setSuccess(true);
       (e.target as HTMLFormElement).reset();
-    } catch (err: any) {
-      setError(err.message || "Something went wrong. Please try again.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -92,6 +102,8 @@ export function ContactForm() {
         <Label htmlFor="contactMessage" className="text-sm font-medium text-navy">Message *</Label>
         <Textarea id="contactMessage" name="message" required placeholder="How can we help you?" rows={5} className="rounded-xl resize-none" />
       </div>
+
+      <LegalConsent />
 
       <Button
         type="submit"

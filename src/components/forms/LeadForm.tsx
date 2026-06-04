@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { LegalConsent } from "@/components/forms/LegalConsent";
 
 interface LeadFormProps {
   source?: string;
@@ -24,6 +25,14 @@ export function LeadForm({ source = "website", country, compact = false }: LeadF
     setError("");
 
     const formData = new FormData(e.currentTarget);
+    const legalConsent = formData.get("legalConsent") === "on";
+
+    if (!legalConsent) {
+      setError("Please accept the Privacy Policy and Terms & Conditions to continue.");
+      setLoading(false);
+      return;
+    }
+
     const data = {
       fullName: formData.get("fullName") as string,
       phone: formData.get("phone") as string,
@@ -32,6 +41,7 @@ export function LeadForm({ source = "website", country, compact = false }: LeadF
       preferredCountry: (formData.get("preferredCountry") as string) || country || "",
       budget: formData.get("budget") as string,
       message: formData.get("message") as string,
+      legalConsent,
       source,
     };
 
@@ -193,6 +203,8 @@ export function LeadForm({ source = "website", country, compact = false }: LeadF
           className="rounded-xl border-border-light focus:border-sky resize-none"
         />
       </div>
+
+      <LegalConsent />
 
       <Button
         type="submit"

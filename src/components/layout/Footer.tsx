@@ -156,12 +156,21 @@ export function Footer() {
           <p className="text-white/40 text-xs">
             © {new Date().getFullYear()} {SITE_CONFIG.name}. All rights reserved.
           </p>
-          <div className="flex items-center gap-4 text-xs text-white/40">
-            <Link href="/contact" className="hover:text-white transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-white/40">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/contact" className="hover:text-white transition-colors">
-              Terms of Service
+            <Link href="/terms-and-conditions" className="hover:text-white transition-colors">
+              Terms & Conditions
+            </Link>
+            <Link href="/refund-policy" className="hover:text-white transition-colors">
+              Refund Policy
+            </Link>
+            <Link href="/disclaimer" className="hover:text-white transition-colors">
+              Disclaimer
+            </Link>
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
+              Cookie Policy
             </Link>
           </div>
         </div>

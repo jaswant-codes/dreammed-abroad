@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { LegalConsent } from "@/components/forms/LegalConsent";
 
 const POPUP_STORAGE_KEY = "dreammed_homepage_popup_last_seen";
 const POPUP_DELAY_MS = 5000;
@@ -55,11 +56,20 @@ export function HomepageLeadPopup() {
     setError("");
 
     const formData = new FormData(event.currentTarget);
+    const legalConsent = formData.get("legalConsent") === "on";
+
+    if (!legalConsent) {
+      setError("Please accept the Privacy Policy and Terms & Conditions to continue.");
+      setLoading(false);
+      return;
+    }
+
     const payload = {
       fullName: (formData.get("fullName") as string) || "",
       phone: (formData.get("phone") as string) || "",
       email: (formData.get("email") as string) || "",
       message: (formData.get("message") as string) || "",
+      legalConsent,
       source: "homepage-popup",
     };
 
@@ -79,8 +89,8 @@ export function HomepageLeadPopup() {
       if (typeof window !== "undefined") {
         window.localStorage.setItem(POPUP_STORAGE_KEY, String(Date.now()));
       }
-    } catch (submissionError: any) {
-      setError(submissionError.message || "Something went wrong. Please try again.");
+    } catch (submissionError: unknown) {
+      setError(submissionError instanceof Error ? submissionError.message : "Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -151,6 +161,8 @@ export function HomepageLeadPopup() {
                   <Label htmlFor="popupMessage" className="text-sm font-medium text-navy">Message</Label>
                   <Textarea id="popupMessage" name="message" placeholder="Tell us your requirement..." rows={3} className="rounded-xl resize-none" />
                 </div>
+
+                <LegalConsent />
 
                 <Button
                   type="submit"

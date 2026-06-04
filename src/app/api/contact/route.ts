@@ -7,6 +7,16 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
+    if (!body.legalConsent) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: "Privacy Policy and Terms consent is required",
+        },
+        { status: 400 }
+      );
+    }
+
     console.log("Sending contact form data:", body);
 
     const response = await fetch(SCRIPT_URL, {
@@ -40,13 +50,14 @@ export async function POST(request: Request) {
       message: "Message sent successfully",
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("CONTACT API ERROR:", error);
+    const message = error instanceof Error ? error.message : "Something went wrong";
 
     return NextResponse.json(
       {
         success: false,
-        error: error.message || "Something went wrong",
+        error: message,
       },
       { status: 500 }
     );

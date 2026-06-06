@@ -14,7 +14,7 @@ export const SITE_CONFIG = {
   whatsappNumber: "918290021125",
   whatsappMessage:
     "Hi, I want MBBS admission counselling from DreamMed Abroad.",
-  address: "Office No. 12, Near CLC Circle, Sikar, Rajasthan – 332001, India",
+  address: "DreamMed Abroad, CLC Circle Road, Railway Station Colony, Sikar, Rajasthan - 332001, India",
   mapEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3537.537!2d75.1399!3d27.6094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396ca547ff09e23d%3A0x1!2sCLC%20Circle%2C%20Sikar%2C%20Rajasthan%20332001!5e0!3m2!1sen!2sin!4v1",
   socialLinks: {

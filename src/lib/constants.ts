@@ -20,7 +20,7 @@ export const SITE_CONFIG = {
   socialLinks: {
     instagram: "https://www.instagram.com/dreammedabroad.in/",
     youtube: "https://www.youtube.com/@dreammedabroad",
-    linkedin: "https://linkedin.com/company/dreammedabroad",
+    linkedin: "https://www.linkedin.com/company/dreammed-abroad/",
   },
 };
 

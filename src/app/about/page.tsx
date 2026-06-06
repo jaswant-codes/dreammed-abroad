@@ -46,6 +46,16 @@ const team = [
     role: "Executive Head",
     line2: "Churu & Jhunjhunu, Rajasthan",
   },
+  {
+  name: "Dr. Pallvi",
+  role: "Executive Head",
+  line2: "Patiala, Punjab",
+},
+{
+  name: "Dr. Rutvi Patel",
+  role: "Executive Head",
+  line2: "Surat, Gujarat",
+},
 ];
 
 const cardVariants = {

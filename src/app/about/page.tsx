@@ -7,9 +7,16 @@ import { motion } from "framer-motion";
 
 const team = [
   {
-    name: "Dr. Vishal",
-    role: "Founder & CEO",
-    line2: "Executive Head – Delhi",
+  name: "Dr. Vishal",
+  role: "Founder & CEO",
+  hospital: "LION'S NGO CLUB",
+  line2: "Executive Head – Delhi",
+  }, 
+  {
+  name: "Dr. Sukhdev Pooniya",
+  role: "COO & Co-Founder",
+  hospital: "AIIMS, New Delhi | EX-RBTB Hospital, New Delhi",
+  line2: "Executive Head – Jodhpur & Barmer, Rajasthan",
   },
   {
     name: "Dr. Dinesh",
@@ -17,9 +24,9 @@ const team = [
     line2: "Executive Head – Ganaur, Sonipat, Haryana",
   },
   {
-    name: "Dr. Sukhdev Pooniya",
-    role: "RBTB Hospital, New Delhi",
-    line2: "Executive Head – Balotra, Jodhpur & Barmer, Rajasthan",
+  name: "Dr. Vikram Rajpurohit",
+  role: "Janta Clinic, Gandhipura",
+  line2: "Executive Head – Balotra, Rajasthan",
   },
   {
     name: "Dr. Avni",
@@ -248,9 +255,23 @@ export default function AboutPage() {
                 {/* Decorative top accent */}
                 <div className="w-10 h-1 rounded-full bg-gradient-to-r from-sky to-navy mx-auto mb-5" />
 
-                <h3 className="font-bold text-lg text-navy leading-snug">{member.name}</h3>
-                <p className="text-sky font-semibold text-sm mt-2">{member.role}</p>
-                <p className="text-text-secondary text-sm mt-3 leading-relaxed flex-1">{member.line2}</p>
+                <h3 className="font-bold text-lg text-navy leading-snug">
+                {member.name}
+                </h3>
+
+                <p className="text-sky font-semibold text-sm mt-2">
+               {member.role}
+                </p>
+
+               {member.hospital && (
+               <p className="text-sky text-sm mt-2">
+               {member.hospital}
+               </p>
+               )}
+
+              <p className="text-text-secondary text-sm mt-3 leading-relaxed flex-1">
+              {member.line2}
+              </p>
               </motion.div>
             ))}
           </div>

@@ -16,10 +16,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: `${SITE_CONFIG.name} | Study MBBS Abroad - Top NMC Approved Universities`,
-    template: `%s | ${SITE_CONFIG.name}`,
-  },
-  description: SITE_CONFIG.description,
+  default: "MBBS Abroad Consultancy in India | DreamMed Abroad",
+  template: `%s | DreamMed Abroad`,
+},
+  description:
+  "DreamMed Abroad is a trusted MBBS abroad consultancy in India helping students get admission to NMC-approved medical universities in Russia, Kazakhstan, Kyrgyzstan, Uzbekistan, and Georgia with complete admission and visa support.",
   keywords: [
     "MBBS abroad",
     "study MBBS in Russia",

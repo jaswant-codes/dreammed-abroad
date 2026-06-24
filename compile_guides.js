@@ -5,10 +5,24 @@ const guide1 = fs.readFileSync(path.join(process.cwd(), 'src/data/guide1.md'), '
 const guide2 = fs.readFileSync(path.join(process.cwd(), 'src/data/guide2.md'), 'utf8');
 const guide3 = fs.readFileSync(path.join(process.cwd(), 'src/data/guide3.md'), 'utf8');
 const guideRussia = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_russia.md'), 'utf8');
+const guideUzbekistan = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_uzbekistan.md'), 'utf8');
 
 const content = `import { BlogPost } from "@/types";
 
 export const guidesData: BlogPost[] = [
+  {
+    id: 105,
+    title: "MBBS in Uzbekistan 2026 Complete Guide for Indian Students",
+    slug: "mbbs-in-uzbekistan-2026",
+    excerpt: "The most comprehensive 2026 guide for Indian students planning to study MBBS in Uzbekistan. Covering fees, NMC approved universities, admission processes, and student life.",
+    content: \`${guideUzbekistan.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`,
+    category: "MBBS Guide",
+    author: "DreamMed Abroad Uzbekistan Expert",
+    date: "2026-06-24",
+    readTime: "25 min read",
+    metaTitle: "MBBS in Uzbekistan 2026 Complete Guide for Indian Students | DreamMed Abroad",
+    metaDescription: "Comprehensive 2026 guide to studying MBBS in Uzbekistan. Compare fees, top NMC approved universities, admission process, and eligibility for Indian students.",
+  },
   {
     id: 104,
     title: "MBBS in Russia 2026 Complete Guide for Indian Students",

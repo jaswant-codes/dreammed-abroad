@@ -45,6 +45,7 @@ export const NAV_LINKS = [
     label: "MBBS Guide",
     href: "#",
     children: [
+      { label: "MBBS in Uzbekistan 2026", href: "/guides/mbbs-in-uzbekistan-2026" },
       { label: "MBBS in Russia 2026", href: "/guides/mbbs-in-russia-2026" },
       { label: "MBBS Abroad 2026 Guide", href: "/guides/mbbs-abroad-2026-guide" },
       { label: "NMC Approved Universities", href: "/guides/nmc-approved-medical-universities-2026" },

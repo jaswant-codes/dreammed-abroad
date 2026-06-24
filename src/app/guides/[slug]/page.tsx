@@ -210,14 +210,20 @@ function renderContent(content: string, slug: string): React.ReactNode[] {
 
     if (trimmed === "[MID_CTA]") {
       const isRussia = slug === "mbbs-in-russia-2026";
+      const isUzbek = slug === "mbbs-in-uzbekistan-2026";
+      const ctaTitle = isUzbek ? "Get Free Uzbekistan MBBS Counselling" : "Need Expert Guidance?";
+      const ctaBtn = isUzbek ? "Apply Now" : (isRussia ? "Apply for Free MBBS Counselling" : "WhatsApp Us");
+      const ctaLink = (isRussia || isUzbek) ? "/apply" : WHATSAPP_URL;
+      const ctaTarget = (isRussia || isUzbek) ? "_self" : "_blank";
+
       elements.push(
         <div key={`mid-cta-${i}`} className="my-10 p-8 rounded-2xl bg-surface border border-sky-200 shadow-md flex flex-col md:flex-row items-center gap-6">
           <div className="flex-1">
-            <h3 className="text-xl font-bold text-navy mb-2">Need Expert Guidance?</h3>
+            <h3 className="text-xl font-bold text-navy mb-2">{ctaTitle}</h3>
             <p className="text-text-secondary">Get a fully transparent, customized fee estimate and university selection help.</p>
           </div>
-          <Link href={isRussia ? "/apply" : WHATSAPP_URL} target={isRussia ? "_self" : "_blank"} rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold transition-colors whitespace-nowrap">
-            {isRussia ? "Apply for Free MBBS Counselling" : "WhatsApp Us"}
+          <Link href={ctaLink} target={ctaTarget} rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full font-bold transition-colors whitespace-nowrap">
+            {ctaBtn}
           </Link>
         </div>
       );
@@ -485,7 +491,11 @@ export default async function GuidePage({ params }: PageProps) {
             
             <div className="relative z-10">
               <h3 className="text-2xl md:text-3xl font-extrabold text-white mb-4">
-                {post.slug === "mbbs-in-russia-2026" ? "Ready for MBBS in Russia?" : "Ready to Begin Your MBBS Journey?"}
+                {post.slug === "mbbs-in-russia-2026" 
+                  ? "Ready for MBBS in Russia?" 
+                  : post.slug === "mbbs-in-uzbekistan-2026"
+                  ? "Talk To DreamMed Abroad Uzbekistan Experts"
+                  : "Ready to Begin Your MBBS Journey?"}
               </h3>
               <p className="text-white/80 text-base md:text-lg mb-8 max-w-2xl mx-auto">
                 Join thousands of successful Indian doctors. Get free, transparent, and expert counselling to find the perfect NMC-approved university.
@@ -493,12 +503,14 @@ export default async function GuidePage({ params }: PageProps) {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link href="/apply" className="w-full sm:w-auto">
                   <Button className="w-full bg-white text-navy hover:bg-sky-50 rounded-full px-8 py-6 h-auto text-lg font-bold shadow-lg transition-all hover:scale-105">
-                    {post.slug === "mbbs-in-russia-2026" ? "Talk to DreamMed Abroad Russia Expert" : "Apply Now"} <ArrowRight className="w-5 h-5 ml-2" />
+                    {post.slug === "mbbs-in-russia-2026" 
+                      ? "Talk to DreamMed Abroad Russia Expert" 
+                      : "Apply Now"} <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 h-auto text-lg font-bold bg-transparent transition-all hover:scale-105">
-                    <MessageCircle className="w-5 h-5 mr-2" /> WhatsApp Us
+                    <MessageCircle className="w-5 h-5 mr-2" /> {post.slug === "mbbs-in-uzbekistan-2026" ? "WhatsApp Consultation" : "WhatsApp Us"}
                   </Button>
                 </a>
               </div>

@@ -79,9 +79,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg sm:text-xl text-white/70 leading-relaxed max-w-xl"
           >
-            Expert counselling for MBBS admission in top NMC-approved
-            universities across Russia, Kazakhstan, Georgia & more. Affordable
-            fees, end-to-end guidance, and a future you deserve.
+            Study MBBS Abroad with DreamMed Abroad. We help Indian students secure admission to NMC-approved medical universities in Russia, Kazakhstan, Kyrgyzstan, Uzbekistan, and Georgia with complete admission, visa, and travel assistance.
           </motion.p>
 
           <motion.div

@@ -39,14 +39,23 @@ export const metadata: Metadata = {
   "NEET MBBS Abroad",
   "MBBS Admission 2026",
 ],
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    url: SITE_CONFIG.url,
-    siteName: SITE_CONFIG.name,
-    title: `${SITE_CONFIG.name} - Your Gateway to a Global Medical Career`,
-    description: SITE_CONFIG.description,
-  },
+ openGraph: {
+  type: "website",
+  locale: "en_IN",
+  url: SITE_CONFIG.url,
+  siteName: "DreamMed Abroad",
+  title: "MBBS Abroad Consultancy in India | DreamMed Abroad",
+  description:
+    "Study MBBS Abroad with DreamMed Abroad. Get admission to NMC-approved medical universities in Russia, Kazakhstan, Kyrgyzstan, Uzbekistan, and Georgia.",
+  images: [
+    {
+      url: "/og-image.jpg",
+      width: 1200,
+      height: 630,
+      alt: "DreamMed Abroad",
+    },
+  ],
+},
   twitter: {
     card: "summary_large_image",
     title: `${SITE_CONFIG.name} - Study MBBS Abroad`,

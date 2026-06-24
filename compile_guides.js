@@ -7,10 +7,38 @@ const guide3 = fs.readFileSync(path.join(process.cwd(), 'src/data/guide3.md'), '
 const guideRussia = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_russia.md'), 'utf8');
 const guideUzbekistan = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_uzbekistan.md'), 'utf8');
 const guideKazakhstan = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_kazakhstan.md'), 'utf8');
+const guideKyrgyzstan = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_kyrgyzstan.md'), 'utf8');
+const guideGeorgia = fs.readFileSync(path.join(process.cwd(), 'src/data/guide_georgia.md'), 'utf8');
 
 const content = `import { BlogPost } from "@/types";
 
 export const guidesData: BlogPost[] = [
+  {
+    id: 108,
+    title: "MBBS in Georgia 2026 Complete Guide for Indian Students",
+    slug: "mbbs-in-georgia-2026",
+    excerpt: "The ultimate 2026 guide for studying MBBS in Georgia. Discover top NMC approved universities, European standard education, fees, and admission process.",
+    content: \`${guideGeorgia.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`,
+    category: "MBBS Guide",
+    author: "DreamMed Abroad Georgia Expert",
+    date: "2026-06-24",
+    readTime: "25 min read",
+    metaTitle: "MBBS in Georgia 2026 Complete Guide for Indian Students | DreamMed Abroad",
+    metaDescription: "Comprehensive 2026 guide to studying MBBS in Georgia. Compare fees, top NMC approved universities, admission process, and eligibility for Indian students.",
+  },
+  {
+    id: 107,
+    title: "MBBS in Kyrgyzstan 2026 Complete Guide for Indian Students",
+    slug: "mbbs-in-kyrgyzstan-2026",
+    excerpt: "The most comprehensive 2026 budget guide for Indian students planning to study MBBS in Kyrgyzstan. Covering fees, universities, admission, and student life.",
+    content: \`${guideKyrgyzstan.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\`,
+    category: "MBBS Guide",
+    author: "DreamMed Abroad Kyrgyzstan Expert",
+    date: "2026-06-24",
+    readTime: "25 min read",
+    metaTitle: "MBBS in Kyrgyzstan 2026 Complete Guide for Indian Students | DreamMed Abroad",
+    metaDescription: "Comprehensive 2026 guide to studying MBBS in Kyrgyzstan. Compare affordable fees, top NMC approved universities, admission process, and eligibility.",
+  },
   {
     id: 106,
     title: "MBBS in Kazakhstan 2026 Complete Guide for Indian Students",

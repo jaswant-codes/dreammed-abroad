@@ -212,10 +212,13 @@ function renderContent(content: string, slug: string): React.ReactNode[] {
       const isRussia = slug === "mbbs-in-russia-2026";
       const isUzbek = slug === "mbbs-in-uzbekistan-2026";
       const isKazakh = slug === "mbbs-in-kazakhstan-2026";
-      const ctaTitle = isKazakh ? "Get Free Kazakhstan MBBS Counselling" : (isUzbek ? "Get Free Uzbekistan MBBS Counselling" : "Need Expert Guidance?");
-      const ctaBtn = (isUzbek || isKazakh) ? "Apply Now" : (isRussia ? "Apply for Free MBBS Counselling" : "WhatsApp Us");
-      const ctaLink = (isRussia || isUzbek || isKazakh) ? "/apply" : WHATSAPP_URL;
-      const ctaTarget = (isRussia || isUzbek || isKazakh) ? "_self" : "_blank";
+      const isKyrgyz = slug === "mbbs-in-kyrgyzstan-2026";
+      const isGeorgia = slug === "mbbs-in-georgia-2026";
+      
+      const ctaTitle = isKyrgyz || isGeorgia ? "Apply for Free Counselling" : (isKazakh ? "Get Free Kazakhstan MBBS Counselling" : (isUzbek ? "Get Free Uzbekistan MBBS Counselling" : "Need Expert Guidance?"));
+      const ctaBtn = (isUzbek || isKazakh || isKyrgyz || isGeorgia) ? "Apply Now" : (isRussia ? "Apply for Free MBBS Counselling" : "WhatsApp Us");
+      const ctaLink = (isRussia || isUzbek || isKazakh || isKyrgyz || isGeorgia) ? "/apply" : WHATSAPP_URL;
+      const ctaTarget = (isRussia || isUzbek || isKazakh || isKyrgyz || isGeorgia) ? "_self" : "_blank";
 
       elements.push(
         <div key={`mid-cta-${i}`} className="my-10 p-8 rounded-2xl bg-surface border border-sky-200 shadow-md flex flex-col md:flex-row items-center gap-6">
@@ -498,12 +501,14 @@ export default async function GuidePage({ params }: PageProps) {
                   ? "Talk To DreamMed Abroad Uzbekistan Experts"
                   : post.slug === "mbbs-in-kazakhstan-2026"
                   ? "Talk To DreamMed Abroad Kazakhstan Experts"
+                  : (post.slug === "mbbs-in-kyrgyzstan-2026" || post.slug === "mbbs-in-georgia-2026")
+                  ? "Talk to DreamMed Abroad Expert"
                   : "Ready to Begin Your MBBS Journey?"}
               </h3>
               <p className="text-white/80 text-base md:text-lg mb-8 max-w-2xl mx-auto">
                 Join thousands of successful Indian doctors. Get free, transparent, and expert counselling to find the perfect NMC-approved university.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
                 <Link href="/apply" className="w-full sm:w-auto">
                   <Button className="w-full bg-white text-navy hover:bg-sky-50 rounded-full px-8 py-6 h-auto text-lg font-bold shadow-lg transition-all hover:scale-105">
                     {post.slug === "mbbs-in-russia-2026" 
@@ -513,9 +518,16 @@ export default async function GuidePage({ params }: PageProps) {
                 </Link>
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <Button variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 h-auto text-lg font-bold bg-transparent transition-all hover:scale-105">
-                    <MessageCircle className="w-5 h-5 mr-2" /> {(post.slug === "mbbs-in-uzbekistan-2026" || post.slug === "mbbs-in-kazakhstan-2026") ? "WhatsApp Consultation" : "WhatsApp Us"}
+                    <MessageCircle className="w-5 h-5 mr-2" /> {(post.slug === "mbbs-in-uzbekistan-2026" || post.slug === "mbbs-in-kazakhstan-2026" || post.slug === "mbbs-in-kyrgyzstan-2026" || post.slug === "mbbs-in-georgia-2026") ? "WhatsApp" : "WhatsApp Us"}
                   </Button>
                 </a>
+                {(post.slug === "mbbs-in-kyrgyzstan-2026" || post.slug === "mbbs-in-georgia-2026") && (
+                  <Link href="/contact" className="w-full sm:w-auto">
+                    <Button variant="outline" className="w-full border-2 border-white text-white hover:bg-white/10 rounded-full px-8 py-6 h-auto text-lg font-bold bg-transparent transition-all hover:scale-105">
+                      Contact Us
+                    </Button>
+                  </Link>
+                )}
               </div>
             </div>
           </div>

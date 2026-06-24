@@ -45,6 +45,8 @@ export const NAV_LINKS = [
     label: "MBBS Guide",
     href: "#",
     children: [
+      { label: "MBBS in Georgia 2026", href: "/guides/mbbs-in-georgia-2026" },
+      { label: "MBBS in Kyrgyzstan 2026", href: "/guides/mbbs-in-kyrgyzstan-2026" },
       { label: "MBBS in Kazakhstan 2026", href: "/guides/mbbs-in-kazakhstan-2026" },
       { label: "MBBS in Uzbekistan 2026", href: "/guides/mbbs-in-uzbekistan-2026" },
       { label: "MBBS in Russia 2026", href: "/guides/mbbs-in-russia-2026" },

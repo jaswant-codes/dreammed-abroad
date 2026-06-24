@@ -83,6 +83,24 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": SITE_CONFIG.name,
+    "url": SITE_CONFIG.url,
+    "logo": `${SITE_CONFIG.url}/icon.png`,
+    "description": SITE_CONFIG.description,
+    "sameAs": [
+      "https://www.facebook.com/dreammedabroad",
+      "https://www.instagram.com/dreammedabroad"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-9876543210",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <html lang="en" className={inter.variable}>
       <head><meta name="google-site-verification" content="NfN4uOKuxeUoANMDnqXbeB1KtcXH2upzIACQ2kRnQhQ" /></head>
@@ -91,21 +109,26 @@ export default function RootLayout({
         <main className="min-h-screen">{children}</main>
         <Footer />
         <WhatsAppButton />
-<Analytics />
+        <Analytics />
         <Script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-NPNQBC6X26"
-/>
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NPNQBC6X26"
+        />
 
-<Script id="google-analytics">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-NPNQBC6X26');
-  `}
-</Script>
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NPNQBC6X26');
+          `}
+        </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </body>
     </html>
   );
 }
+

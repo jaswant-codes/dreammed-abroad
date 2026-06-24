@@ -88,6 +88,26 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white/80 mb-4 mt-8">
+              MBBS Guide
+            </h3>
+            <ul className="space-y-2.5">
+              {[
+                { label: "MBBS Abroad 2026 Guide", href: "/guides/mbbs-abroad-2026-guide" },
+                { label: "NMC Approved Universities", href: "/guides/nmc-approved-medical-universities-2026" },
+                { label: "Fees Comparison 2026", href: "/guides/mbbs-abroad-fees-comparison-2026" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/60 hover:text-white text-sm transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Study Destinations */}

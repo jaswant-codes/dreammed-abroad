@@ -41,6 +41,15 @@ export const NAV_LINKS = [
   },
   { label: "Universities", href: "/universities" },
   { label: "Blog", href: "/blog" },
+  {
+    label: "MBBS Guide",
+    href: "#",
+    children: [
+      { label: "MBBS Abroad 2026 Guide", href: "/guides/mbbs-abroad-2026-guide" },
+      { label: "NMC Approved Universities", href: "/guides/nmc-approved-medical-universities-2026" },
+      { label: "Fees Comparison 2026", href: "/guides/mbbs-abroad-fees-comparison-2026" },
+    ],
+  },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

@@ -68,9 +68,9 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
           >
-            Your Gateway to a{" "}
-            <span className="text-sky-light">Global Medical</span>{" "}
-            Career
+            Study{" "}
+            <span className="text-sky-light">MBBS Abroad</span>{" "}
+            from India
           </motion.h1>
 
           <motion.p

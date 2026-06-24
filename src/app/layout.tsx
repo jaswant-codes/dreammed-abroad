@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -91,6 +92,19 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
 <Analytics />
+        <Script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-NPNQBC6X26"
+/>
+
+<Script id="google-analytics">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NPNQBC6X26');
+  `}
+</Script>
       </body>
     </html>
   );

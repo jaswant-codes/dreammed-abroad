@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
+// import Link from "next/link";
 import { blogPosts, getBlogBySlug } from "@/data/blogs";
 import { SITE_CONFIG, WHATSAPP_URL } from "@/lib/constants";
 import { Badge } from "@/components/ui/badge";
@@ -215,8 +217,76 @@ function renderContent(content: string): React.ReactNode[] {
   while (i < lines.length) {
     const trimmed = lines[i].trim();
 
+    
+    // Image
+    if (trimmed.startsWith('![')) {
+      const imgMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)/);
+      if (imgMatch) {
+        elements.push(
+          <figure key={i} className="my-8">
+            <div className="relative w-full h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-lg">
+              <Image 
+                src={imgMatch[2]} 
+                alt={imgMatch[1] || 'DreamMed Abroad'} 
+                fill 
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 800px"
+              />
+            </div>
+            {imgMatch[1] && (
+              <figcaption className="text-center text-sm text-text-secondary mt-3 italic">
+                {imgMatch[1]}
+              </figcaption>
+            )}
+          </figure>
+        );
+      }
+      i++;
+      continue;
+    }
+
+
+    // MID_CTA
+    if (trimmed === '[MID_CTA]') {
+      elements.push(
+        <div key={`mid-cta-${i}`} className="my-10 p-8 rounded-2xl bg-surface border border-sky-200 shadow-md flex flex-col md:flex-row items-center gap-6">
+          <div className="flex-1">
+            <h4 className="text-2xl font-bold text-navy mb-2">Get Free MBBS Abroad Counselling</h4>
+            <p className="text-text-secondary">Speak with our experts to find the perfect NMC approved university within your budget.</p>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link href="/apply">
+              <Button className="bg-sky text-white hover:bg-sky-600 px-6 py-6 rounded-full font-bold w-full sm:w-auto shadow-md">
+                Apply Now
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="outline" className="border-2 border-sky text-sky hover:bg-sky-50 px-6 py-6 rounded-full font-bold w-full sm:w-auto">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+        </div>
+      );
+      i++;
+      continue;
+    }
+
     // Empty lines
     if (!trimmed) {
+      i++;
+      continue;
+    }
+
+    // H1 (from markdown, render as H2 for SEO)
+    if (trimmed.startsWith("# ") && !trimmed.startsWith("## ")) {
+      const text = trimmed.slice(2);
+      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+      elements.push(
+        <h2 key={i} id={id} className="mt-12 mb-6 text-3xl font-extrabold text-navy scroll-mt-28">
+          {parseInline(text)}
+        </h2>
+      );
       i++;
       continue;
     }

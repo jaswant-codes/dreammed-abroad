@@ -19,11 +19,6 @@ const team = [
   line2: "Executive Head – Jodhpur & Barmer, Rajasthan",
   },
   {
-    name: "Dr. Dinesh",
-    role: "RML Hospital, Delhi",
-    line2: "Executive Head – Ganaur, Sonipat, Haryana",
-  },
-  {
   name: "Dr. Vikram Rajpurohit",
   role: "Janta Clinic, Gandhipura",
   line2: "Executive Head – Balotra, Rajasthan",

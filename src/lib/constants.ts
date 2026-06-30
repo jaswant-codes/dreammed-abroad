@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   phones: [
     "+91 82900 21125",
     "+91 78779 37069",
-    "+91 73398 20769"
+    "+91 8905820769"
   ],
   email: "contact.dreammed@gmail.com",
   whatsappNumber: "918290021125",
